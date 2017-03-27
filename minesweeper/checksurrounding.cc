@@ -8,19 +8,22 @@ void Minesweeper::checkSurrounding(size_t const xCoord, size_t const yCoord)
     {
         size_t possibleX = xCoord + moves[idx][0];
         size_t possibleY = yCoord + moves[idx][1];
+
         if (possibleX < 0 or possibleX >= d_size or possibleY < 0 or possibleY >= d_size)
             continue;
+
         if (d_gameBoard[possibleX][possibleY].visited())
             continue;
+
         d_gameBoard[possibleX][possibleY].setVisited();
+
         if (d_gameBoard[possibleX][possibleY].numBombsNear() == 0)
         {
             d_gameBoard[possibleX][possibleY].setState('0');
             checkSurrounding(possibleX, possibleY);
+            continue;
         }
-        else if (d_gameBoard[possibleX][possibleY].numBombsNear() != 0)
-        {
-            d_gameBoard[possibleX][possibleY].setState('0' + d_gameBoard[possibleX][possibleY].numBombsNear());
-        }
+
+        d_gameBoard[possibleX][possibleY].setState('0' + d_gameBoard[possibleX][possibleY].numBombsNear());
     }
 }
