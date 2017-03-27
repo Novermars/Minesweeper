@@ -3,7 +3,7 @@
 Minesweeper::Minesweeper(size_t const size)
 :
     d_size{size},
-    d_gameBoard{std::vector<std::vector<MinesweeperCell>>(size, std::vector<MinesweeperCell>(size))}
+    d_gameBoard{vector<vector<MinesweeperCell>>(size, vector<MinesweeperCell>(size))}
 {
     initializeBoard();
     setNumBombsNear();

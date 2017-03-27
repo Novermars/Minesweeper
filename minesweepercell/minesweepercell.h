@@ -11,12 +11,11 @@ class MinesweeperCell
     bool d_visited = false;
     
     public:
-        MinesweeperCell() = default;
         void setBomb();
         bool isBomb() const;
         void setState(char const ch);
         char state() const;
-        void setNumBombsNear(std::size_t num);
+        void setNumBombsNear(std::size_t const num);
         std::size_t numBombsNear() const;
         bool visited() const;
         void setVisited();

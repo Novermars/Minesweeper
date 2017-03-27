@@ -3,6 +3,7 @@
 void Minesweeper::play()
 {
     bool notDone = true;
+    cout << *this;
     while (notDone)
     {
         char cmd;
