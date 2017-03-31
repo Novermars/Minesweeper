@@ -9,11 +9,11 @@ void Minesweeper::setNumBombsNear()
         for (size_t col = 0; col < d_size; ++col) 
         {
             size_t num = 0;
-            for (size_t idx = 0; idx != 8 /*sizeof(move) / sizeof(move[0]) */; ++idx)
+            for (size_t idx = 0; idx != 8; ++idx)
             {
                 size_t possibleRow = row + moves[idx][0];
                 size_t possibleCol = col + moves[idx][1];
-                if (possibleRow < 0 or possibleRow >= d_size or possibleCol < 0 or possibleCol >= d_size)
+                if (possibleRow >= d_size or possibleCol >= d_size)
                     continue;
                 num += d_gameBoard[possibleRow][possibleCol].isBomb() ? 1 : 0;
             }

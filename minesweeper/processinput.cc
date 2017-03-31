@@ -25,8 +25,7 @@ bool Minesweeper::processInput(char const cmd, size_t const xCoord, size_t const
             d_gameBoard[xCoord][yCoord].setState('0' + d_gameBoard[xCoord][yCoord].numBombsNear());
             if (d_gameBoard[xCoord][yCoord].numBombsNear() != 0)
                 break;
-            else
-                checkSurrounding(xCoord, yCoord);
+            checkSurrounding(xCoord, yCoord);
             break;
         default:
             cout << "Invalid command, please try again\n";

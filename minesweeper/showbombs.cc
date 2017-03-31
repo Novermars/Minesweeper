@@ -2,7 +2,7 @@
 
 void Minesweeper::showBombs()
 {
-    for (auto &location : d_bombLocations)
+    for (auto const &location : d_bombLocations)
     {
         d_gameBoard[location.first][location.second].setState('B');
     }
