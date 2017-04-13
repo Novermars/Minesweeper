@@ -13,7 +13,7 @@ void Minesweeper::play()
 
         size_t xCoord, yCoord;
         cin >> xCoord >> yCoord;
-        if (xCoord < 0 or xCoord >= d_size or yCoord < 0 or yCoord >= d_size)
+        if (xCoord >= d_size or yCoord >= d_size)
         {
             cout << "Please input valid coordinates\n";
             continue;
